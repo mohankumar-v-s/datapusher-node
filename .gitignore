@@ -1,0 +1,45 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# SQLite DB files
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Redis dump (in case persisted)
+dump.rdb
+
+# Jest coverage
+coverage/
+
+# VSCode settings
+.vscode/
+
+# Optional: Bull queue data if using local folder-based persistence
+bullmq-data/
+
+# Optional: Ignore compiled files if using TypeScript
+dist/
+build/
+
+# Optional: IDE-specific
+.idea/
+*.swp
+
+# Test temp files
+tests/tmp/

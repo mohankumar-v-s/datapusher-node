@@ -1,0 +1,560 @@
+{
+	"info": {
+		"_postman_id": "fea6656a-2df9-47cb-ace7-62cd704b989c",
+		"name": "Customer Labs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27467817",
+		"_collection_link": "https://bold-meteor-565221.postman.co/workspace/New-Team-Workspace~08ded127-f132-4b31-9a0e-71c4e41808a6/collection/27467817-fea6656a-2df9-47cb-ace7-62cd704b989c?action=share&source=collection_link&creator=27467817"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john123@gmail.com\",\r\n  \"password\": \"Demo@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}api/user/register",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/accounts \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"accountName\": \"John's Analytics\",\r\n  \"website\": \"https://johnanalytics.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"token\", pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john123@gmail.com\",\r\n  \"password\": \"Demo@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}api/user/login",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/accounts \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"accountName\": \"John's Analytics\",\r\n  \"website\": \"https://johnanalytics.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Beaearor eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzQ5NjYwMzA3LCJleHAiOjE3NDk2NjM5MDd9.DyvQ2ZAiUM0uZYBWI3kcq7Bacwgc_OLl4hXtBQQenmE",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}api/user/profile",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/accounts \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"accountName\": \"John's Analytics\",\r\n  \"website\": \"https://johnanalytics.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Beaearor eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzQ5NjYwMzA3LCJleHAiOjE3NDk2NjM5MDd9.DyvQ2ZAiUM0uZYBWI3kcq7Bacwgc_OLl4hXtBQQenmE",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}api/user/users",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/accounts \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"accountName\": \"John's Analytics\",\r\n  \"website\": \"https://johnanalytics.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Beaearor eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzQ5NjYwMzA3LCJleHAiOjE3NDk2NjM5MDd9.DyvQ2ZAiUM0uZYBWI3kcq7Bacwgc_OLl4hXtBQQenmE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john@gmail.com\",\r\n  \"currentPassword\": \"Demo@1234\",\r\n  \"newPassword\": \"Demo@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}api/user/profile",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/accounts \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"accountName\": \"John's Analytics\",\r\n  \"website\": \"https://johnanalytics.com\"\r\n}'\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Get Account By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}api/accounts/1",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/accounts \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"accountName\": \"John's Analytics\",\r\n  \"website\": \"https://johnanalytics.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}api/accounts/2",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/accounts \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"accountName\": \"John's Analytics\",\r\n  \"website\": \"https://johnanalytics.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Updae Account By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"account_name\": \"Johns Testing\",\r\n  \"website\":\"https://demoanalytics.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}api/accounts/1",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/accounts \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"accountName\": \"John's Analytics\",\r\n  \"website\": \"https://johnanalytics.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account_name\": \"Webhook Test Account\",\r\n    \"website\": \"https://webhook.site\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}api/accounts",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/accounts \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"accountName\": \"John's Analytics\",\r\n  \"website\": \"https://johnanalytics.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "All Accounts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}api/accounts",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/accounts \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"accountName\": \"John's Analytics\",\r\n  \"website\": \"https://johnanalytics.com\"\r\n}'\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Destinations",
+			"item": [
+				{
+					"name": "Get Destination By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}api/accounts/1/destinations/1",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/destinations \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"accountId\": \"<ACCOUNT_ID>\",\r\n  \"url\": \"https://webhook.site/your-url\",\r\n  \"method\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Destination By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"http_method\": \"PUT\",\r\n  \"url\": \"https://webhook.site/updated-url-123\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"NEWAPPID9876\",\r\n    \"APP_SECRET\": \"updatedsecretkey123\",\r\n    \"ACTION\": \"user.replace\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"application/json\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}api/accounts/1/destinations/1",
+						"description": "Generated from cURL: curl -X PUT http://localhost:3000/destinations/<DESTINATION_ID> \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"method\": \"PUT\",\r\n  \"url\": \"https://webhook.site/updated-url\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"NEWAPPID9876\",\r\n    \"APP_SECRET\": \"updatedsecretkey123\",\r\n    \"ACTION\": \"user.replace\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"application/json\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete destinations By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}api/accounts/1/destinations/1",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/destinations \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"accountId\": \"<ACCOUNT_ID>\",\r\n  \"url\": \"https://webhook.site/your-url\",\r\n  \"method\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Destinations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}api/accounts/1/destinations",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/destinations \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"accountId\": \"<ACCOUNT_ID>\",\r\n  \"url\": \"https://webhook.site/your-url\",\r\n  \"method\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Create destinations",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"url\": \"https://webhook.site/930ce096-9fd6-46c9-be29-58ec51b41308\",\r\n  \"http_method\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"e70b157d-d333-4151-ac0a-0d01cdc6989a\",\r\n    \"APP_SECRET\": \"032d03b7-6db0-4009-aef6-35a5aa5e9d35\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}api/accounts/1/destinations",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/destinations \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"accountId\": \"<ACCOUNT_ID>\",\r\n  \"url\": \"https://webhook.site/your-url\",\r\n  \"method\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Members",
+			"item": [
+				{
+					"name": "Create Members",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\":\"john123@gmail.com\",\r\n  \"role_name\":\"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}api/accounts/1/members",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/destinations \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"accountId\": \"<ACCOUNT_ID>\",\r\n  \"url\": \"https://webhook.site/your-url\",\r\n  \"method\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Member Role",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"role_name\":\"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}api/accounts/1/members/1",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/destinations \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"accountId\": \"<ACCOUNT_ID>\",\r\n  \"url\": \"https://webhook.site/your-url\",\r\n  \"method\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Member",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}api/accounts/1/members/2",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/destinations \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"accountId\": \"<ACCOUNT_ID>\",\r\n  \"url\": \"https://webhook.site/your-url\",\r\n  \"method\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "List All Members",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}api/accounts/1/members",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/destinations \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"accountId\": \"<ACCOUNT_ID>\",\r\n  \"url\": \"https://webhook.site/your-url\",\r\n  \"method\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "List Member By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}api/accounts/1/members/1",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/destinations \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"accountId\": \"<ACCOUNT_ID>\",\r\n  \"url\": \"https://webhook.site/your-url\",\r\n  \"method\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logs",
+			"item": [
+				{
+					"name": "Read Logs By EventId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}api/accounts/1/logs/6cfa0806-516c-4706-b571-96d8edc25f72",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/server/incoming_data \\\r\n-H \"Content-Type: application/json\" \\\r\n-H \"CL-X-TOKEN: <SECRET_TOKEN>\" \\\r\n-d '{\r\n  \"userId\": \"u123\",\r\n  \"action\": \"update\",\r\n  \"details\": {\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Logs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}api/accounts/1/logs",
+						"description": "Generated from cURL: curl -X POST http://localhost:3000/server/incoming_data \\\r\n-H \"Content-Type: application/json\" \\\r\n-H \"CL-X-TOKEN: <SECRET_TOKEN>\" \\\r\n-d '{\r\n  \"userId\": \"u123\",\r\n  \"action\": \"update\",\r\n  \"details\": {\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\"\r\n  }\r\n}'\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Incoming Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "CL-X-TOKEN",
+						"value": "f9af7d65-f96f-4a1d-a220-a7d1ac2bb51e"
+					},
+					{
+						"key": "CL-X-EVENT-ID",
+						"value": "72c5d550-f534-4ef6-a443-7e8d854694fd",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"event_type\": \"user.update\",\r\n    \"timestamp\": \"2025-06-15T13:05:00Z\",\r\n    \"data\": {\r\n        \"user\": {\r\n            \"id\": \"USR-123\",\r\n            \"email\": \"test123@example.com\",\r\n            \"update_type\": \"profile_change\",\r\n            \"changes\": {\r\n                \"name\": {\r\n                    \"old\": \"John Doe\",\r\n                    \"new\": \"John Smith\"\r\n                },\r\n                \"phone\": {\r\n                    \"old\": null,\r\n                    \"new\": \"+1234567890\"\r\n                }\r\n            }\r\n        },\r\n        \"metadata\": {\r\n            \"source\": \"api\",\r\n            \"version\": \"1.0\",\r\n            \"app_id\": \"ff9a24e3-fe44-4d15-a049-ffa761c99a04\",\r\n            \"timestamp\": \"2025-06-15T13:05:00Z\",\r\n            \"ip_address\": \"192.168.1.1\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}api/server/incoming_data",
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/server/incoming_data \\\r\n-H \"Content-Type: application/json\" \\\r\n-H \"CL-X-TOKEN: <SECRET_TOKEN>\" \\\r\n-d '{\r\n  \"userId\": \"u123\",\r\n  \"action\": \"update\",\r\n  \"details\": {\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\"\r\n  }\r\n}'\r\n"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{token}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000",
+			"type": "default"
+		}
+	]
+}
