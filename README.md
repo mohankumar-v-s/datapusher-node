@@ -1,4 +1,4 @@
-# Customer Labs API Documentation
+# DataPusher API Documentation
 
 ## Overview
 Customer Labs API is a webhook management system that allows you to handle incoming data, manage accounts, destinations, members, and track logs. This API provides a comprehensive set of endpoints for managing webhook configurations and monitoring webhook events.
